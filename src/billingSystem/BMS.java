@@ -135,11 +135,11 @@ public class BMS {
             
 //            System.out.print("Enter your mobile_no : ");
 //            long Mobile_no = bfr.read();
-//            psmt.setLong(5, Mobile_no);
+//            psmt.setLong(7, Mobile_no);
 //            
 //            System.out.print("Enter your Aadhar_no : ");
 //            long Aadhar_no = bfr.read();
-//            psmt.setLong(6, Aadhar_no);
+//            psmt.setLong(8, Aadhar_no);
             
             System.out.print("Enter your Address : ");
             String Address = bfr.readLine();
@@ -148,6 +148,9 @@ public class BMS {
             System.out.print("Enter Consumer Number : ");
             String Consumer_no = bfr.readLine();
             psmt.setString(6, Consumer_no);
+            
+            
+            
             
             // Capture code
             
@@ -178,7 +181,7 @@ public class BMS {
 	            psmt.executeUpdate();
 //	            
 //	            System.out.println("Captcha Code Matched"); 
-//	            System.out.println("Value Inserted");
+	            System.out.println("Value Inserted");
 //	        } else {
 //	            System.out.println("Captcha Code Not Matched");
 //	            System.out.println("No! Data Inserted");
@@ -192,6 +195,32 @@ public class BMS {
             
         }
 		
+	}
+	
+	public void viewConsumer() {
+		try {
+			
+            String url = "jdbc:mysql://localhost:3306/ebms";
+            String user = "root";
+            String pass = "080672";
+
+            Connection conn = DriverManager.getConnection(url, user, pass);
+
+            Statement smt = conn.createStatement();
+
+            String q = "select * from new_consumer";
+
+            smt.execute(q);
+
+            System.out.println("Show");
+
+            conn.close();
+            
+        } catch(Exception e) {
+        	
+            System.out.println("Error " + e);
+            
+        }
 	}
 
 	
