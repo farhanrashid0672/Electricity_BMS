@@ -208,7 +208,7 @@ public class BMS {
 
             Statement smt = conn.createStatement();
 
-            String q = "select * from new_consumer";
+            String q = "select * from new_consumer where consumer_no = 1001494";
 
             smt.execute(q);
 
