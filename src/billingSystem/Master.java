@@ -10,31 +10,40 @@ public class Master {
 		
 		BMS b1 = new BMS();
 		
-		//b1.connection();
-		//b1.createDB();
-		//b1.createTable();
-		//while(true) {
-			System.out.println("Press 1 for Register new consumer");
-			System.out.println("Press 2 for View all consumer");
-			System.out.print("Enter your choice : ");
-			
-			int choice = sc.nextInt();
-			sc.nextLine();
-			
-			switch (choice) {
-			
-			case 1 : b1.insertValue();
-			break;
-			
-			case 2 : b1.viewConsumer();
-			break;
-			
-			default : System.out.println("Invalid choice!");
-			
-			}
-			
-		//}
+		int choice;
+        do {
+            System.out.println("\n======== Electricity Billing System ========\n");
+            System.out.println("1. Admin Login");
+            System.out.println("2. User Login");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
 
-	}
+            switch (choice) {
+                case 1:
+                	b1.adminLogin();            	
+                    break;
+                case 2:
+					b1.userLogin();
+                    break;
+                case 3:
+                    System.out.println("Exit! Thank you!");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
 
-}
+        } while (choice != 3);
+
+        sc.close();
+    }
+}	
+
+
+
+
+
+
+
+
+
